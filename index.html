@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Audio-SLM</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Fragment+Mono&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #f7f5f0; --ink: #1a1815; --faint: #8d877c;
+    --rule: #d8d4c8; --accent: #c8451f;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--paper); color: var(--ink);
+    font-family: "Fragment Mono", monospace;
+    -webkit-font-smoothing: antialiased;
+    background-image: repeating-linear-gradient(0deg, transparent, transparent 31px, rgba(0,0,0,.025) 31px, rgba(0,0,0,.025) 32px);
+  }
+  main { max-width: 920px; margin: 0 auto; padding: 72px 24px 120px; }
+  h1 {
+    font-family: "Instrument Serif", serif; font-weight: 400;
+    font-size: clamp(44px, 7vw, 76px); letter-spacing: -.01em; line-height: .95;
+  }
+  h1 em { font-style: italic; color: var(--accent); }
+  h2 {
+    font-family: "Instrument Serif", serif; font-weight: 400; font-style: italic;
+    font-size: 34px; margin: 88px 0 8px; padding-bottom: 10px;
+    border-bottom: 1px solid var(--ink);
+  }
+  h3 {
+    font-size: 11px; font-weight: 400; letter-spacing: .14em; text-transform: uppercase;
+    color: var(--faint); margin: 40px 0 10px;
+  }
+  h3::before { content: "— "; color: var(--accent); }
+  table { width: 100%; border-collapse: collapse; }
+  td { border-bottom: 1px solid var(--rule); padding: 13px 14px 13px 0; vertical-align: middle; }
+  tr:hover td { background: rgba(200, 69, 31, .035); }
+  .tag { width: 92px; font-size: 9px; letter-spacing: .16em; color: var(--accent); white-space: nowrap; }
+  .sent { font-size: 13px; line-height: 1.75; width: 46%; }
+  .play { width: 300px; }
+  audio { width: 100%; height: 34px; accent-color: var(--accent); }
+  @media (max-width: 700px) {
+    .play { width: 100%; } .sent { width: auto; }
+    table, tr, td { display: block; }
+    td { border-bottom: none; padding: 4px 0; }
+    tr { border-bottom: 1px solid var(--rule); padding: 10px 0; }
+  }
+</style>
+</head>
+<body>
+<main>
+  <h1>Audio-<em>SLM</em></h1>
+  <section>
+    <h2>Malay (ms)</h2>
+    <div class="model">
+      <h3>facebook/mms-tts-zlm</h3>
+<table>
+  <tr><td class="tag">PLAIN</td><td class="sent">Saya nak makan nasi lemak petang nanti.</td><td class="play"><audio controls preload="none" src="audio/ms/mms-tts-zlm/ms_p01.wav"></audio></td></tr>
+  <tr><td class="tag">DIGITS</td><td class="sent">Dia lahir pada tahun 1990 di Johor.</td><td class="play"><audio controls preload="none" src="audio/ms/mms-tts-zlm/ms_d01.wav"></audio></td></tr>
+  <tr><td class="tag">CODE-SWITCH</td><td class="sent">Saya nak order chicken rice untuk makan tengah hari.</td><td class="play"><audio controls preload="none" src="audio/ms/mms-tts-zlm/ms_c01.wav"></audio></td></tr>
+  <tr><td class="tag">QUESTION</td><td class="sent">Awak nak pergi mana petang ni?</td><td class="play"><audio controls preload="none" src="audio/ms/mms-tts-zlm/ms_q01.wav"></audio></td></tr>
+  <tr><td class="tag">LONG</td><td class="sent">Encik Rahman dan Puan Siti berpindah dari flat mereka di Woodlands ke rumah baharu di Jurong East bulan lepas.</td><td class="play"><audio controls preload="none" src="audio/ms/mms-tts-zlm/ms_l01.wav"></audio></td></tr>
+</table>
+    </div>
+    <div class="model">
+      <h3>k2-fsa/OmniVoice</h3>
+<table>
+  <tr><td class="tag">PLAIN</td><td class="sent">Saya nak makan nasi lemak petang nanti.</td><td class="play"><audio controls preload="none" src="audio/ms/omnivoice/ms_p01.wav"></audio></td></tr>
+  <tr><td class="tag">DIGITS</td><td class="sent">Dia lahir pada tahun 1990 di Johor.</td><td class="play"><audio controls preload="none" src="audio/ms/omnivoice/ms_d01.wav"></audio></td></tr>
+  <tr><td class="tag">CODE-SWITCH</td><td class="sent">Saya nak order chicken rice untuk makan tengah hari.</td><td class="play"><audio controls preload="none" src="audio/ms/omnivoice/ms_c01.wav"></audio></td></tr>
+  <tr><td class="tag">QUESTION</td><td class="sent">Awak nak pergi mana petang ni?</td><td class="play"><audio controls preload="none" src="audio/ms/omnivoice/ms_q01.wav"></audio></td></tr>
+  <tr><td class="tag">LONG</td><td class="sent">Encik Rahman dan Puan Siti berpindah dari flat mereka di Woodlands ke rumah baharu di Jurong East bulan lepas.</td><td class="play"><audio controls preload="none" src="audio/ms/omnivoice/ms_l01.wav"></audio></td></tr>
+</table>
+    </div>
+    <div class="model">
+      <h3>mesolitica/Malaysian-TTS-1.7B-v1 · idayu</h3>
+<table>
+  <tr><td class="tag">QUESTION</td><td class="sent">Awak nak pergi mana petang ni?</td><td class="play"><audio controls preload="none" src="audio/ms/mesolitica-idayu/ms_q01.wav"></audio></td></tr>
+</table>
+    </div>
+    <div class="model">
+      <h3>mesolitica/Malaysian-TTS-1.7B-v1 · husein</h3>
+<table>
+  <tr><td class="tag">CODE-SWITCH</td><td class="sent">Saya nak order chicken rice untuk makan tengah hari.</td><td class="play"><audio controls preload="none" src="audio/ms/mesolitica-husein/ms_c01.wav"></audio></td></tr>
+  <tr><td class="tag">QUESTION</td><td class="sent">Awak nak pergi mana petang ni?</td><td class="play"><audio controls preload="none" src="audio/ms/mesolitica-husein/ms_q01.wav"></audio></td></tr>
+  <tr><td class="tag">LONG</td><td class="sent">Encik Rahman dan Puan Siti berpindah dari flat mereka di Woodlands ke rumah baharu di Jurong East bulan lepas.</td><td class="play"><audio controls preload="none" src="audio/ms/mesolitica-husein/ms_l01.wav"></audio></td></tr>
+</table>
+    </div>
+  </section>
+  <section>
+    <h2>Tamil (ta)</h2>
+    <div class="model">
+      <h3>facebook/mms-tts-tam</h3>
+<table>
+  <tr><td class="tag">PLAIN</td><td class="sent">நான் இன்று காலை கோவிலுக்கு சென்றேன்.</td><td class="play"><audio controls preload="none" src="audio/ta/mms-tts-tam/ta_p01.wav"></audio></td></tr>
+  <tr><td class="tag">DIGITS</td><td class="sent">அவர் 1990 ஆம் ஆண்டு பிறந்தார்.</td><td class="play"><audio controls preload="none" src="audio/ta/mms-tts-tam/ta_d01.wav"></audio></td></tr>
+  <tr><td class="tag">CODE-SWITCH</td><td class="sent">நான் lunch-க்கு chicken rice சாப்பிடப் போகிறேன்.</td><td class="play"><audio controls preload="none" src="audio/ta/mms-tts-tam/ta_c01.wav"></audio></td></tr>
+  <tr><td class="tag">QUESTION</td><td class="sent">நீ எங்கே போகிறாய்?</td><td class="play"><audio controls preload="none" src="audio/ta/mms-tts-tam/ta_q01.wav"></audio></td></tr>
+  <tr><td class="tag">LONG</td><td class="sent">ராமன் அண்ணாவும் சித்ரா அக்காவும் வுட்லேண்ட்ஸில் இருந்து ஜூரோங் கிழக்கிற்கு கடந்த மாதம் குடிபெயர்ந்தனர்.</td><td class="play"><audio controls preload="none" src="audio/ta/mms-tts-tam/ta_l01.wav"></audio></td></tr>
+</table>
+    </div>
+    <div class="model">
+      <h3>k2-fsa/OmniVoice</h3>
+<table>
+  <tr><td class="tag">PLAIN</td><td class="sent">நான் இன்று காலை கோவிலுக்கு சென்றேன்.</td><td class="play"><audio controls preload="none" src="audio/ta/omnivoice/ta_p01.wav"></audio></td></tr>
+  <tr><td class="tag">DIGITS</td><td class="sent">அவர் 1990 ஆம் ஆண்டு பிறந்தார்.</td><td class="play"><audio controls preload="none" src="audio/ta/omnivoice/ta_d01.wav"></audio></td></tr>
+  <tr><td class="tag">CODE-SWITCH</td><td class="sent">நான் lunch-க்கு chicken rice சாப்பிடப் போகிறேன்.</td><td class="play"><audio controls preload="none" src="audio/ta/omnivoice/ta_c01.wav"></audio></td></tr>
+  <tr><td class="tag">QUESTION</td><td class="sent">நீ எங்கே போகிறாய்?</td><td class="play"><audio controls preload="none" src="audio/ta/omnivoice/ta_q01.wav"></audio></td></tr>
+  <tr><td class="tag">LONG</td><td class="sent">ராமன் அண்ணாவும் சித்ரா அக்காவும் வுட்லேண்ட்ஸில் இருந்து ஜூரோங் கிழக்கிற்கு கடந்த மாதம் குடிபெயர்ந்தனர்.</td><td class="play"><audio controls preload="none" src="audio/ta/omnivoice/ta_l01.wav"></audio></td></tr>
+</table>
+    </div>
+    <div class="model">
+      <h3>aguken-ai/Qwen3-TTS · tamil_female</h3>
+<table>
+  <tr><td class="tag">PLAIN</td><td class="sent">நான் இன்று காலை கோவிலுக்கு சென்றேன்.</td><td class="play"><audio controls preload="none" src="audio/ta/aguken-tamil-female/ta_p01.wav"></audio></td></tr>
+  <tr><td class="tag">DIGITS</td><td class="sent">அவர் 1990 ஆம் ஆண்டு பிறந்தார்.</td><td class="play"><audio controls preload="none" src="audio/ta/aguken-tamil-female/ta_d01.wav"></audio></td></tr>
+  <tr><td class="tag">CODE-SWITCH</td><td class="sent">நான் lunch-க்கு chicken rice சாப்பிடப் போகிறேன்.</td><td class="play"><audio controls preload="none" src="audio/ta/aguken-tamil-female/ta_c01.wav"></audio></td></tr>
+  <tr><td class="tag">QUESTION</td><td class="sent">நீ எங்கே போகிறாய்?</td><td class="play"><audio controls preload="none" src="audio/ta/aguken-tamil-female/ta_q01.wav"></audio></td></tr>
+  <tr><td class="tag">LONG</td><td class="sent">ராமன் அண்ணாவும் சித்ரா அக்காவும் வுட்லேண்ட்ஸில் இருந்து ஜூரோங் கிழக்கிற்கு கடந்த மாதம் குடிபெயர்ந்தனர்.</td><td class="play"><audio controls preload="none" src="audio/ta/aguken-tamil-female/ta_l01.wav"></audio></td></tr>
+</table>
+    </div>
+  </section>
+</main>
+</body>
+</html>
