@@ -45,48 +45,6 @@ a { text-decoration: none; }
   background: var(--signal);
 }
 
-.emotion-masthead {
-  position: relative;
-  z-index: 2;
-  display: flex;
-  justify-content: space-between;
-  gap: 2rem;
-  align-items: end;
-  min-height: 72vh;
-  padding: 10rem 3vw 5rem;
-  border-top: 1px solid var(--ink);
-}
-
-.emotion-masthead h2 {
-  max-width: 11ch;
-  margin: .8rem 0 1.5rem;
-  padding: 0;
-  border: 0;
-  color: var(--ink);
-  font: 400 clamp(4.5rem, 11vw, 10rem)/.78 var(--serif);
-  letter-spacing: -.065em;
-}
-
-.emotion-masthead h2 em { color: var(--signal); font-weight: 400; }
-
-.emotion-masthead p {
-  max-width: 42rem;
-  margin: 0;
-  color: var(--muted);
-  font-size: clamp(.8rem, 1.2vw, 1rem);
-  line-height: 1.7;
-}
-
-.emotion-kicker,
-.emotion-count {
-  color: var(--muted);
-  font-size: .68rem;
-  letter-spacing: .15em;
-  text-transform: uppercase;
-}
-
-.emotion-count { flex: none; padding-bottom: .2rem; }
-
 .emotion-filters {
   position: sticky;
   top: 0;
@@ -106,7 +64,7 @@ a { text-decoration: none; }
   color: var(--muted);
   background: transparent;
   font: inherit;
-  font-size: .68rem;
+  font-size: .78rem;
   letter-spacing: .12em;
   text-transform: uppercase;
   cursor: pointer;
@@ -116,13 +74,17 @@ a { text-decoration: none; }
 .emotion-filter:hover { color: var(--ink); }
 .emotion-filter.active { color: var(--surface); background: var(--ink); }
 
-.emotion-samples { padding: 0 3vw; }
+.emotion-samples {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 3vw;
+}
 
 .condition {
   display: grid;
-  grid-template-columns: minmax(15rem, .72fr) minmax(0, 2fr);
-  gap: 5vw;
-  padding: 7rem 0;
+  grid-template-columns: minmax(9rem, .35fr) minmax(0, 2fr);
+  gap: 3rem;
+  padding: 4rem 0;
   border-bottom: 1px solid var(--line);
   transition: opacity .25s, transform .25s;
 }
@@ -131,39 +93,39 @@ a { text-decoration: none; }
 
 .condition-head {
   position: sticky;
-  top: 5.2rem;
+  top: 5rem;
   align-self: start;
 }
 
 .condition-number {
   display: block;
-  margin-bottom: 1rem;
+  margin-bottom: .65rem;
   color: var(--signal);
-  font-size: .7rem;
+  font-size: .78rem;
   letter-spacing: .15em;
 }
 
 .condition h2 {
   margin: 0;
-  font: 400 clamp(3.6rem, 7vw, 7.5rem)/.8 var(--serif);
-  letter-spacing: -.06em;
+  font: 400 clamp(1.8rem, 3vw, 2.5rem)/1 var(--serif);
+  letter-spacing: -.025em;
   text-transform: uppercase;
 }
 
 .intensity {
   display: inline-block;
-  margin-top: 1.5rem;
+  margin-top: .85rem;
   color: var(--muted);
-  font-size: .68rem;
+  font-size: .76rem;
   letter-spacing: .18em;
   text-transform: uppercase;
 }
 
-.references { display: grid; gap: 5rem; }
+.references { display: grid; gap: 3.5rem; }
 
 .reference-head {
   display: grid;
-  grid-template-columns: 4.5rem minmax(0, 1fr);
+  grid-template-columns: 5rem minmax(0, 1fr);
   gap: 1rem;
   align-items: center;
   padding-bottom: 1.2rem;
@@ -172,17 +134,15 @@ a { text-decoration: none; }
 
 .reference-label, .track-index {
   color: var(--muted);
-  font-size: .64rem;
+  font-size: .72rem;
   letter-spacing: .12em;
   text-transform: uppercase;
 }
 
-.reference-copy { margin: 0 0 1rem; font: 400 1.35rem/1.35 var(--serif); }
-
 .track {
   display: grid;
-  grid-template-columns: 4.5rem minmax(13rem, 1fr) minmax(16rem, 1.1fr);
-  gap: 1rem;
+  grid-template-columns: 5rem minmax(15rem, 1.2fr) minmax(15rem, 1fr);
+  gap: 1.25rem;
   align-items: center;
   padding: 1.35rem 0;
   border-bottom: 1px solid rgba(25, 25, 22, .14);
@@ -214,19 +174,18 @@ a { text-decoration: none; }
   cursor: pointer;
 }
 
-.time { color: var(--muted); font-size: .66rem; font-variant-numeric: tabular-nums; }
+.time { color: var(--muted); font-size: .74rem; font-variant-numeric: tabular-nums; }
 
-.hanji { margin: 0; font: 400 1.05rem/1.65 var(--serif); }
-.gloss { margin: .3rem 0 0; color: var(--muted); font-size: .78rem; line-height: 1.55; }
+.hanji { margin: 0; font: 400 1.2rem/1.5 var(--serif); }
+.gloss { margin: .35rem 0 0; color: var(--muted); font-size: .92rem; line-height: 1.5; }
 
 @media (max-width: 820px) {
-  .emotion-masthead { min-height: 64vh; padding-top: 7rem; }
-  .emotion-count { display: none; }
-  .condition { grid-template-columns: 1fr; padding: 5rem 0; }
+  .condition { grid-template-columns: 1fr; gap: 2rem; padding: 3.5rem 0; }
   .condition-head { position: static; }
-  .condition h2 { font-size: clamp(4rem, 18vw, 7rem); }
+  .condition h2 { font-size: 2rem; }
   .track { grid-template-columns: 2.5rem minmax(0, 1fr); }
   .track-copy { grid-column: 2; }
+  .track .player { grid-column: 2; }
   .reference-head { grid-template-columns: 2.5rem minmax(0, 1fr); }
 }
 

@@ -59,7 +59,6 @@ const scripts = {
   ]
 };
 
-const references = ["Kids are talking by the door.", "Dogs are sitting by the door."];
 const samples = document.querySelector("#emotion-sample-list");
 
 const player = (src, label) => `
@@ -81,20 +80,17 @@ samples.innerHTML = conditions.map(([folder, emotion, intensity, names], conditi
       ${[1, 2].map(reference => `
         <article class="reference">
           <div class="reference-head">
-            <span class="reference-label">EN · 0${reference}</span>
-            <div>
-              <p class="reference-copy">${references[reference - 1]}</p>
-              ${player(`audio/emotion/${folder}/ref_0${reference}/reference_english.wav`, `English reference ${reference}`)}
-            </div>
+            <span class="reference-label">REF · 0${reference}</span>
+            ${player(`audio/emotion/${folder}/ref_0${reference}/reference_english.wav`, `Reference audio ${reference}`)}
           </div>
           ${names.map((name, trackIndex) => `
             <div class="track">
               <span class="track-index">HOK · 0${trackIndex + 1}</span>
-              ${player(`audio/emotion/${folder}/ref_0${reference}/0${trackIndex + 1}_${name}.wav`, `${emotion} Hokkien sample ${trackIndex + 1}`)}
               <div class="track-copy">
                 <p class="hanji" lang="nan-Hant">${scripts[emotion][trackIndex][0]}</p>
                 <p class="gloss">${scripts[emotion][trackIndex][1]}</p>
               </div>
+              ${player(`audio/emotion/${folder}/ref_0${reference}/0${trackIndex + 1}_${name}.wav`, `${emotion} Hokkien sample ${trackIndex + 1}`)}
             </div>`).join("")}
         </article>`).join("")}
     </div>
