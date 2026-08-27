@@ -6,6 +6,7 @@
 <title>TTS Samples</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Fragment+Mono&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="emotion-gallery.css">
 <style>
   :root {
     --paper: #f7f5f0; --ink: #1a1815; --faint: #8d877c;
@@ -119,5 +120,25 @@
     </div>
   </section>
 </main>
+<section class="emotion-gallery" id="emotion-samples" aria-labelledby="emotion-gallery-title">
+  <div class="emotion-scroll-line" aria-hidden="true"></div>
+  <header class="emotion-masthead">
+    <div>
+      <span class="emotion-kicker">Extended study</span>
+      <h2 id="emotion-gallery-title">RAVDESS × <em>Hokkien</em></h2>
+      <p>Emotion-congruent Hokkien speech conditioned on two English reference voices.</p>
+    </div>
+    <span class="emotion-count">90 outputs</span>
+  </header>
+
+  <nav class="emotion-filters" aria-label="Filter emotion samples">
+    <button class="emotion-filter active" type="button" data-filter="all">All</button>
+    <button class="emotion-filter" type="button" data-filter="normal">Normal</button>
+    <button class="emotion-filter" type="button" data-filter="strong">Strong</button>
+  </nav>
+
+  <div id="emotion-sample-list" class="emotion-samples"></div>
+</section>
+<script src="emotion-gallery.js"></script>
 </body>
 </html>
