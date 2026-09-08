@@ -20,17 +20,24 @@ h2, p { margin-top: 0; }
 .task-heading { display: grid; grid-template-columns: 56px minmax(220px,1fr) minmax(430px,1.25fr); gap: 24px; align-items: end; max-width: 1280px; margin: 0 auto 48px; }
 .task-number { align-self: start; color: var(--signal); font-size: .85rem; }
 .task-type { margin-bottom: 8px; }
-h2 { margin-bottom: 0; font: 500 clamp(2.3rem,4.2vw,4.2rem)/.95 var(--serif); letter-spacing: -.035em; }
+h2 { margin-bottom: 0; font: 500 clamp(2rem,3vw,2.9rem)/1 var(--serif); letter-spacing: -.025em; }
 .task-stats { display: grid; grid-template-columns: repeat(3,1fr); margin: 0; border-top: 1px solid var(--line); }
 .task-stats div { padding: 14px 10px 0 0; }
 .task-stats dt { margin-bottom: 5px; }
 .task-stats dd { margin: 0; font: 500 1.2rem/1.2 var(--serif); }
 .task-stats small { color: var(--muted); font: 400 .68rem/1 var(--mono); text-transform: uppercase; }
-.sample { display: grid; grid-template-columns: minmax(260px,.75fr) minmax(400px,1.25fr); gap: clamp(36px,8vw,120px); max-width: 1170px; margin: 0 auto; padding-top: 36px; border-top: 1px solid var(--line); }
+.sample { display: grid; grid-template-columns: minmax(260px,.75fr) minmax(400px,1.25fr); gap: clamp(36px,8vw,120px); align-items: start; max-width: 1170px; margin: 0 auto; padding-top: 36px; border-top: 1px solid var(--line); }
 .sample-audio { display: grid; align-content: start; gap: 15px; }
 audio { width: 100%; height: 38px; accent-color: var(--signal); }
 .file-name { overflow-wrap: anywhere; letter-spacing: .03em; text-transform: none; }
-.sample-content { display: grid; grid-template-columns: 1fr .55fr; gap: 40px; }
+.dialogue { display: grid; gap: 0; margin-top: 20px; padding-top: 24px; border-top: 1px solid var(--line); }
+.dialogue > .field-label { margin-bottom: 4px; }
+.utterance { padding: 16px 0; border-bottom: 1px solid rgba(23,23,20,.1); }
+.utterance:last-child { border-bottom: 0; }
+.speaker { display: block; margin-bottom: 6px; color: var(--signal); font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; }
+.dialogue-hanji { margin-bottom: 3px; font: 400 1.08rem/1.5 var(--serif); }
+.dialogue-translation { margin-bottom: 0; color: var(--muted); font: italic 400 .92rem/1.5 var(--serif); }
+.sample-content { display: grid; grid-template-columns: 1fr .55fr; gap: 40px; align-items: start; }
 .transcript-content { grid-template-columns: 1fr; }
 .qa-block { position: relative; }
 .answer { padding-left: 24px; border-left: 2px solid var(--signal); }
