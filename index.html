@@ -1,135 +1,118 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>TTS Samples</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Fragment+Mono&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="emotion-gallery.css">
-<style>
-  :root {
-    --paper: #f7f5f0; --ink: #1a1815; --faint: #8d877c;
-    --rule: #d8d4c8; --accent: #c8451f;
-  }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body {
-    background: var(--paper); color: var(--ink);
-    font-family: "Fragment Mono", monospace;
-    -webkit-font-smoothing: antialiased;
-    background-image: repeating-linear-gradient(0deg, transparent, transparent 31px, rgba(0,0,0,.025) 31px, rgba(0,0,0,.025) 32px);
-  }
-  main { max-width: 920px; margin: 0 auto; padding: 72px 24px 120px; }
-  h1 {
-    font-family: "Instrument Serif", serif; font-weight: 400;
-    font-size: clamp(44px, 7vw, 76px); letter-spacing: -.01em; line-height: .95;
-  }
-  h1 em { font-style: italic; color: var(--accent); }
-  h2 {
-    font-family: "Instrument Serif", serif; font-weight: 400; font-style: italic;
-    font-size: 34px; margin: 88px 0 8px; padding-bottom: 10px;
-    border-bottom: 1px solid var(--ink);
-  }
-  h3 {
-    font-size: 11px; font-weight: 400; letter-spacing: .14em; text-transform: uppercase;
-    color: var(--faint); margin: 40px 0 10px;
-  }
-  h3::before { content: "— "; color: var(--accent); }
-  table { width: 100%; border-collapse: collapse; }
-  td { border-bottom: 1px solid var(--rule); padding: 13px 14px 13px 0; vertical-align: middle; }
-  tr:hover td { background: rgba(200, 69, 31, .035); }
-  .tag { width: 92px; font-size: 9px; letter-spacing: .16em; color: var(--accent); white-space: nowrap; }
-  .sent { font-size: 13px; line-height: 1.75; width: 46%; }
-  .play { width: 300px; }
-  audio { width: 100%; height: 34px; accent-color: var(--accent); }
-  @media (max-width: 700px) {
-    .play { width: 100%; } .sent { width: auto; }
-    table, tr, td { display: block; }
-    td { border-bottom: none; padding: 4px 0; }
-    tr { border-bottom: 1px solid var(--rule); padding: 10px 0; }
-  }
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Training and evaluation data for a Singapore Hokkien audio language model.">
+  <title>Singapore Hokkien Audio SLM — Dataset</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="dataset-showcase.css">
 </head>
 <body>
-<main>
-  <h1>TTS <em>Samples</em></h1>
-  <section>
-    <h2>Malay (ms)</h2>
-    <div class="model">
-      <h3>facebook/mms-tts-zlm</h3>
-<table>
-  <tr><td class="tag">PLAIN</td><td class="sent">Saya nak makan nasi lemak petang nanti.</td><td class="play"><audio controls preload="none" src="audio/ms/mms-tts-zlm/ms_p01.wav"></audio></td></tr>
-  <tr><td class="tag">DIGITS</td><td class="sent">Dia lahir pada tahun 1990 di Johor.</td><td class="play"><audio controls preload="none" src="audio/ms/mms-tts-zlm/ms_d01.wav"></audio></td></tr>
-  <tr><td class="tag">CODE-SWITCH</td><td class="sent">Saya nak order chicken rice untuk makan tengah hari.</td><td class="play"><audio controls preload="none" src="audio/ms/mms-tts-zlm/ms_c01.wav"></audio></td></tr>
-  <tr><td class="tag">QUESTION</td><td class="sent">Awak nak pergi mana petang ni?</td><td class="play"><audio controls preload="none" src="audio/ms/mms-tts-zlm/ms_q01.wav"></audio></td></tr>
-  <tr><td class="tag">LONG</td><td class="sent">Encik Rahman dan Puan Siti berpindah dari flat mereka di Woodlands ke rumah baharu di Jurong East bulan lepas.</td><td class="play"><audio controls preload="none" src="audio/ms/mms-tts-zlm/ms_l01.wav"></audio></td></tr>
-</table>
-    </div>
-    <div class="model">
-      <h3>k2-fsa/OmniVoice</h3>
-<table>
-  <tr><td class="tag">PLAIN</td><td class="sent">Saya nak makan nasi lemak petang nanti.</td><td class="play"><audio controls preload="none" src="audio/ms/omnivoice/ms_p01.wav"></audio></td></tr>
-  <tr><td class="tag">DIGITS</td><td class="sent">Dia lahir pada tahun 1990 di Johor.</td><td class="play"><audio controls preload="none" src="audio/ms/omnivoice/ms_d01.wav"></audio></td></tr>
-  <tr><td class="tag">CODE-SWITCH</td><td class="sent">Saya nak order chicken rice untuk makan tengah hari.</td><td class="play"><audio controls preload="none" src="audio/ms/omnivoice/ms_c01.wav"></audio></td></tr>
-  <tr><td class="tag">QUESTION</td><td class="sent">Awak nak pergi mana petang ni?</td><td class="play"><audio controls preload="none" src="audio/ms/omnivoice/ms_q01.wav"></audio></td></tr>
-  <tr><td class="tag">LONG</td><td class="sent">Encik Rahman dan Puan Siti berpindah dari flat mereka di Woodlands ke rumah baharu di Jurong East bulan lepas.</td><td class="play"><audio controls preload="none" src="audio/ms/omnivoice/ms_l01.wav"></audio></td></tr>
-</table>
-    </div>
-    <div class="model">
-      <h3>mesolitica/Malaysian-TTS-1.7B-v1 · husein</h3>
-<table>
-  <tr><td class="tag">PLAIN</td><td class="sent">Saya nak makan nasi lemak petang nanti.</td><td class="play"><audio controls preload="none" src="audio/ms/mesolitica-husein/ms_p01.wav"></audio></td></tr>
-  <tr><td class="tag">DIGITS</td><td class="sent">Dia lahir pada tahun 1990 di Johor.</td><td class="play"><audio controls preload="none" src="audio/ms/mesolitica-husein/ms_d01.wav"></audio></td></tr>
-  <tr><td class="tag">CODE-SWITCH</td><td class="sent">Saya nak order chicken rice untuk makan tengah hari.</td><td class="play"><audio controls preload="none" src="audio/ms/mesolitica-husein/ms_c01.wav"></audio></td></tr>
-  <tr><td class="tag">QUESTION</td><td class="sent">Awak nak pergi mana petang ni?</td><td class="play"><audio controls preload="none" src="audio/ms/mesolitica-husein/ms_q01.wav"></audio></td></tr>
-  <tr><td class="tag">LONG</td><td class="sent">Encik Rahman dan Puan Siti berpindah dari flat mereka di Woodlands ke rumah baharu di Jurong East bulan lepas.</td><td class="play"><audio controls preload="none" src="audio/ms/mesolitica-husein/ms_l01.wav"></audio></td></tr>
-</table>
-    </div>
-  </section>
-  <section>
-    <h2>Tamil (ta)</h2>
-    <div class="model">
-      <h3>facebook/mms-tts-tam</h3>
-<table>
-  <tr><td class="tag">PLAIN</td><td class="sent">நான் இன்று காலை கோவிலுக்கு சென்றேன்.</td><td class="play"><audio controls preload="none" src="audio/ta/mms-tts-tam/ta_p01.wav"></audio></td></tr>
-  <tr><td class="tag">DIGITS</td><td class="sent">அவர் 1990 ஆம் ஆண்டு பிறந்தார்.</td><td class="play"><audio controls preload="none" src="audio/ta/mms-tts-tam/ta_d01.wav"></audio></td></tr>
-  <tr><td class="tag">CODE-SWITCH</td><td class="sent">நான் lunch-க்கு chicken rice சாப்பிடப் போகிறேன்.</td><td class="play"><audio controls preload="none" src="audio/ta/mms-tts-tam/ta_c01.wav"></audio></td></tr>
-  <tr><td class="tag">QUESTION</td><td class="sent">நீ எங்கே போகிறாய்?</td><td class="play"><audio controls preload="none" src="audio/ta/mms-tts-tam/ta_q01.wav"></audio></td></tr>
-  <tr><td class="tag">LONG</td><td class="sent">ராமன் அண்ணாவும் சித்ரா அக்காவும் வுட்லேண்ட்ஸில் இருந்து ஜூரோங் கிழக்கிற்கு கடந்த மாதம் குடிபெயர்ந்தனர்.</td><td class="play"><audio controls preload="none" src="audio/ta/mms-tts-tam/ta_l01.wav"></audio></td></tr>
-</table>
-    </div>
-    <div class="model">
-      <h3>k2-fsa/OmniVoice</h3>
-<table>
-  <tr><td class="tag">PLAIN</td><td class="sent">நான் இன்று காலை கோவிலுக்கு சென்றேன்.</td><td class="play"><audio controls preload="none" src="audio/ta/omnivoice/ta_p01.wav"></audio></td></tr>
-  <tr><td class="tag">DIGITS</td><td class="sent">அவர் 1990 ஆம் ஆண்டு பிறந்தார்.</td><td class="play"><audio controls preload="none" src="audio/ta/omnivoice/ta_d01.wav"></audio></td></tr>
-  <tr><td class="tag">CODE-SWITCH</td><td class="sent">நான் lunch-க்கு chicken rice சாப்பிடப் போகிறேன்.</td><td class="play"><audio controls preload="none" src="audio/ta/omnivoice/ta_c01.wav"></audio></td></tr>
-  <tr><td class="tag">QUESTION</td><td class="sent">நீ எங்கே போகிறாய்?</td><td class="play"><audio controls preload="none" src="audio/ta/omnivoice/ta_q01.wav"></audio></td></tr>
-  <tr><td class="tag">LONG</td><td class="sent">ராமன் அண்ணாவும் சித்ரா அக்காவும் வுட்லேண்ட்ஸில் இருந்து ஜூரோங் கிழக்கிற்கு கடந்த மாதம் குடிபெயர்ந்தனர்.</td><td class="play"><audio controls preload="none" src="audio/ta/omnivoice/ta_l01.wav"></audio></td></tr>
-</table>
-    </div>
-    <div class="model">
-      <h3>aguken-ai/Qwen3-TTS · tamil_female</h3>
-<table>
-  <tr><td class="tag">PLAIN</td><td class="sent">நான் இன்று காலை கோவிலுக்கு சென்றேன்.</td><td class="play"><audio controls preload="none" src="audio/ta/aguken-tamil-female/ta_p01.wav"></audio></td></tr>
-  <tr><td class="tag">DIGITS</td><td class="sent">அவர் 1990 ஆம் ஆண்டு பிறந்தார்.</td><td class="play"><audio controls preload="none" src="audio/ta/aguken-tamil-female/ta_d01.wav"></audio></td></tr>
-  <tr><td class="tag">CODE-SWITCH</td><td class="sent">நான் lunch-க்கு chicken rice சாப்பிடப் போகிறேன்.</td><td class="play"><audio controls preload="none" src="audio/ta/aguken-tamil-female/ta_c01.wav"></audio></td></tr>
-  <tr><td class="tag">QUESTION</td><td class="sent">நீ எங்கே போகிறாய்?</td><td class="play"><audio controls preload="none" src="audio/ta/aguken-tamil-female/ta_q01.wav"></audio></td></tr>
-  <tr><td class="tag">LONG</td><td class="sent">ராமன் அண்ணாவும் சித்ரா அக்காவும் வுட்லேண்ட்ஸில் இருந்து ஜூரோங் கிழக்கிற்கு கடந்த மாதம் குடிபெயர்ந்தனர்.</td><td class="play"><audio controls preload="none" src="audio/ta/aguken-tamil-female/ta_l01.wav"></audio></td></tr>
-</table>
-    </div>
-  </section>
-</main>
-<section class="emotion-gallery" id="emotion-samples" aria-label="Emotion-controlled Hokkien samples">
-  <div class="emotion-scroll-line" aria-hidden="true"></div>
-  <nav class="emotion-filters" aria-label="Filter emotion samples">
-    <button class="emotion-filter active" type="button" data-filter="all">All</button>
-    <button class="emotion-filter" type="button" data-filter="normal">Normal</button>
-    <button class="emotion-filter" type="button" data-filter="strong">Strong</button>
-  </nav>
-
-  <div id="emotion-sample-list" class="emotion-samples"></div>
-</section>
-<script src="emotion-gallery.js"></script>
+  <div class="scroll-progress" aria-hidden="true"></div>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Singapore Hokkien Audio SLM home">
+      <span class="brand-mark" aria-hidden="true">聲</span>
+      <span>Singapore Hokkien<br>Audio SLM</span>
+    </a>
+    <a class="jump-link" href="#dataset">View dataset <span aria-hidden="true">↓</span></a>
+  </header>
+  <main id="top">
+    <section class="hero" aria-labelledby="page-title">
+      <p class="eyebrow">Model training corpus · 2026</p>
+      <h1 id="page-title">Listen. Ask.<br><em>Understand.</em></h1>
+      <p class="hero-copy">Four audio tasks for training and evaluating Singapore Hokkien speech understanding.</p>
+      <div class="hero-summary" aria-label="Dataset summary">
+        <div><strong>49,197</strong><span>train rows</span></div>
+        <div><strong>1,478</strong><span>eval rows</span></div>
+        <div><strong>57.22 h</strong><span>unique audio</span></div>
+      </div>
+    </section>
+    <section class="dataset" id="dataset" aria-label="Dataset tasks">
+      <article class="task" id="spoken-qa">
+        <header class="task-heading">
+          <span class="task-number">01</span>
+          <div><p class="task-type">Audio question answering</p><h2>SpokenQA</h2></div>
+          <dl class="task-stats">
+            <div><dt>Train</dt><dd>3,713</dd></div><div><dt>Eval</dt><dd>195</dd></div><div><dt>Audio</dt><dd>25.58 h</dd></div>
+          </dl>
+        </header>
+        <div class="sample">
+          <div class="sample-audio">
+            <span class="sample-label">Example · two speakers</span>
+            <audio controls preload="metadata" src="audio/data/audio/sqa/sqa_p3_2548.wav">Your browser does not support audio playback.</audio>
+            <span class="file-name">sqa_p3_2548.wav · 00:15</span>
+          </div>
+          <div class="sample-content">
+            <div class="qa-block"><span class="field-label">Question</span><p class="hanji" lang="nan-Hant">照第一個人佮第二個人講，夢婚紗店是啥物顏色？</p><p class="translation">According to the two speakers, what colour is the Dreams Wedding Shop?</p></div>
+            <div class="qa-block answer"><span class="field-label">Answer</span><p class="hanji" lang="nan-Hant">粉紅色。</p><p class="translation">Pink.</p></div>
+          </div>
+        </div>
+      </article>
+      <article class="task" id="gender-recognition">
+        <header class="task-heading">
+          <span class="task-number">02</span>
+          <div><p class="task-type">Closed-label classification</p><h2>Gender Recognition</h2></div>
+          <dl class="task-stats">
+            <div><dt>Train</dt><dd>7,426</dd></div><div><dt>Eval</dt><dd>390</dd></div><div><dt>Audio</dt><dd>25.58 h <small>shared</small></dd></div>
+          </dl>
+        </header>
+        <div class="sample">
+          <div class="sample-audio">
+            <span class="sample-label">Example · same dialogue</span>
+            <audio controls preload="metadata" src="audio/data/audio/sqa/sqa_p3_2548.wav">Your browser does not support audio playback.</audio>
+            <span class="file-name">sqa_p3_2548.wav · 00:15</span>
+          </div>
+          <div class="sample-content">
+            <div class="qa-block"><span class="field-label">Question</span><p class="prompt-text">What is the gender of Speaker 1?</p></div>
+            <div class="qa-block answer"><span class="field-label">Answer</span><p class="prompt-text">female</p></div>
+          </div>
+        </div>
+      </article>
+      <article class="task" id="speech-qa">
+        <header class="task-heading">
+          <span class="task-number">03</span>
+          <div><p class="task-type">Generated grounded QA</p><h2>SpeechQA</h2></div>
+          <dl class="task-stats">
+            <div><dt>Train</dt><dd>3,669</dd></div><div><dt>Eval</dt><dd>191</dd></div><div><dt>Audio</dt><dd>25.28 h</dd></div>
+          </dl>
+        </header>
+        <div class="sample">
+          <div class="sample-audio">
+            <span class="sample-label">Example · two speakers</span>
+            <audio controls preload="metadata" src="audio/data/audio/sqa/sqa_p3_3117.wav">Your browser does not support audio playback.</audio>
+            <span class="file-name">sqa_p3_3117.wav · 00:14</span>
+          </div>
+          <div class="sample-content">
+            <div class="qa-block"><span class="field-label">Question</span><p class="hanji" lang="nan-Hant">彼兩捆黃色干草佇佗位？</p><p class="translation">Where are the two yellow hay bales?</p></div>
+            <div class="qa-block answer"><span class="field-label">Answer</span><p class="hanji" lang="nan-Hant">左手邊</p><p class="translation">On the left.</p></div>
+          </div>
+        </div>
+      </article>
+      <article class="task" id="asr">
+        <header class="task-heading">
+          <span class="task-number">04</span>
+          <div><p class="task-type">Speech transcription</p><h2>ASR</h2></div>
+          <dl class="task-stats">
+            <div><dt>Train</dt><dd>34,389</dd></div><div><dt>Eval</dt><dd>702</dd></div><div><dt>Audio</dt><dd>31.64 h</dd></div>
+          </dl>
+        </header>
+        <div class="sample">
+          <div class="sample-audio">
+            <span class="sample-label">Example · single speaker</span>
+            <audio controls preload="metadata" src="audio/data/audio/asr/asr_p1_6178f05e087d0963.wav">Your browser does not support audio playback.</audio>
+            <span class="file-name">asr_p1_6178f05e087d0963.wav · 00:04</span>
+          </div>
+          <div class="sample-content transcript-content">
+            <div class="qa-block"><span class="field-label">Transcript</span><p class="hanji" lang="nan-Hant">我袂覺得應該只有遮一種方式</p><p class="translation">I don’t think there should be only this one way.</p></div>
+          </div>
+        </div>
+      </article>
+    </section>
+  </main>
+  <footer><span>Singapore Hokkien Audio SLM</span><a href="#top">Back to top ↑</a></footer>
+  <script src="dataset-showcase.js"></script>
 </body>
 </html>
